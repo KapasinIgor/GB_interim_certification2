@@ -1,19 +1,27 @@
 public class Toy {
-    int id;
-    String name;
-    float weight;
+    private int id;
+    private String name;
+    private int weight;
 
-    public Toy(int id, String name, float weight) {
+    public Toy(int id, String name, int weight) {
         this.id = id;
         this.name = name;
         this.weight = weight;
     }
 
-    public void setWeight(float weight) {
-        this.weight = weight;
+    public int getId() {
+        return id;
     }
 
-    public float getWeight() {
+    public String getName() {
+        return name;
+    }
+
+    public int getWeight() {
         return weight;
+    }
+
+    public String toString() {
+        return String.format("%d, %s, %d", getId(), getName(), getWeight());
     }
 }
