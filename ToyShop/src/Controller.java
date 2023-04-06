@@ -9,12 +9,11 @@ import java.util.Random;
 public class Controller {
 
     public PriorityQueue<Toy> getQueue(ArrayList<Toy> toys, int number) {
-
-        Comparator<Toy> comparator = (o1, o2) -> o1.getWeight() - o2.getWeight();
+        Comparator<Toy> comparator = Comparator.comparingInt(Toy::getWeight);
         PriorityQueue<Toy> prizes = new PriorityQueue<>(comparator);
-        for (int i = 0; i < toys.size(); i++) {
-            for (int j = 0; j < (toys.get(i).getWeight() * number / 100); j++) {
-                prizes.add(toys.get(i));
+        for (Toy toy : toys) {
+            for (int j = 0; j < (toy.getWeight() * number / 100); j++) {
+                prizes.add(toy);
             }
         }
         return prizes;
