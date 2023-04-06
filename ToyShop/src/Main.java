@@ -7,6 +7,7 @@ public class Main {
 
         Controller controller = new Controller();
 
+        //количество разыгрываемых игрушек за раз
         int numberOfPrizes = 15;
 
         ArrayList<Toy> toys = new ArrayList<>();
